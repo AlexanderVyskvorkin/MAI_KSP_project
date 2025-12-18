@@ -166,7 +166,7 @@ if time_to_maneuver < 0:
     time_to_maneuver += 2*math.pi / abs(relative_omega)
 
 
-# Корректируем для неотрицательного перицентра (Это очень сложно посчитать из-за влияния тяготения Муны и т.д. значение эмпирическое)
+# Корректируем для неотрицательного перицентра
 time_to_maneuver -= 90
 
 
@@ -302,5 +302,6 @@ vessel.auto_pilot.reference_frame = vessel.orbital_reference_frame
 vessel.auto_pilot.target_direction = (0, -1, 0)
 vessel.auto_pilot.wait()
 vessel.auto_pilot.disengage()
+
 
 print('Спутник успешно выведен на орбиту Муны')
